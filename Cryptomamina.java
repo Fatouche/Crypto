@@ -10,7 +10,7 @@ public class Cryptomamina {
 		
 		for(int i = 0; i < message.length(); i++)// 
 		{
-			// Décalage
+			// DÃ©calage
 			int decalage = (int)cle.charAt(i % cle.length()) - 97;
 			int LettreCrypter = ((int)message.charAt(i) - 97 + decalage) % 26 + 97;
 			conversion.setCharAt(i, (char)LettreCrypter);
@@ -22,27 +22,27 @@ public class Cryptomamina {
 	
 	
 	public static void main(String[] args) {
-		// Déclaration des variables
+		// DÃ©claration des variables
 		String message;
 		String cle;
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("// ** Vigenere Par Foucaud Giovanny ** \\");
+		System.out.println("// ** Vigenere Par GF ** \\");
 		System.out.println("// ** 							    ** \\");
 		System.out.println("// ** 							    ** \\");
 		
-		System.out.println("Entrée votre message : ");
+		System.out.println("EntrÃ©e votre message : ");
 		message = sc.nextLine();
 		
-		System.out.println("Entrée votre cle de cryptage : ");
+		System.out.println("EntrÃ©e votre cle de cryptage : ");
 		cle = sc.nextLine();
 		
 		try{
 			FileWriter fichierTXT = new FileWriter("texteChiffre.txt");
-			fichierTXT.write("Résultat : " + cryptage(message,cle));
+			fichierTXT.write("RÃ©sultat : " + cryptage(message,cle));
 			fichierTXT.close();
 		}catch(Exception e){
-			System.out.println("Le Cryptage à échoué ! L'écriture dans le fichier impossible");
+			System.out.println("Le Cryptage Ã  Ã©chouÃ© ! L'Ã©criture dans le fichier impossible");
 		}
 		
 	}
